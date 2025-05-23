@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section>
+        <div>
+            <div id="city">Vadakadu</div>
+            <div id="localtime">12:24 am</div>
+        </div>
+        <select id="weathers" onchange="weather(this.value)">
+            <option value="pudukkotai">pudukkotai</option>
+            <option value="chennai">chennai</option>
+            <option value="peravurani">peravurani</option>
+            <option value="thanjavur">thanjavur</option>
+        </select>
+    </section>
+
+    <section>
+        <div style="display: flex ;justify-content: center;">
+            <select id="" style="text-transform: capitalize; margin-top: 20px;" onchange=namee(this.value)>
+                <option value="All">All</option>
+                <option value="Reactjs">Reactjs</option>
+                <option value="Javascript">Javascript</option>
+                <option value="Html">Html</option>
+            </select>
+        </div>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; padding-top: 20px; justify-content: center;">
+            <div id="boxx" style="display: flex;gap: 20px; flex-wrap: wrap;">
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        async function weather(value) {
+            let cityName = value ? value : 'Chennai'
+            let apiFDatas = "http://api.weatherapi.com/v1/current.json?key=1f11fe6117fb4a1f88655629240108&q=" + cityName + "&aqi=no"
+            try {
+                const response = await fetch(apiFDatas);
+                if (!response.ok) {
+                    throw new Error(`response status : ${response.status}`)
+                }
+                const json = await response.json()
+                console.log(json);
+                let city = json.location.name;
+                let localTime = json.location.localtime;
+                document.getElementById("city").innerHTML = city
+                document.getElementById("localtime").innerHTML = localTime
+            } catch (error) {
+                alert("this is wrong")
+            }
+        }
+    </script>
+    <script>
+        let studentdata = [
+            {
+                name: "Dharma",
+                age: 28,
+                Profession: "Reactjs",
+
+            },
+            {
+                name: "Prakash",
+                age: 20,
+                Profession: "Reactjs"
+            },
+            {
+                name: "Akash",
+                age: 20,
+                Profession: "Javascript"
+            },
+            {
+                name: "Dinesh",
+                age: 20,
+                Profession: "Javascript"
+            },
+            {
+                name: "Kural",
+                age: 20,
+                Profession: "Javascript"
+            },
+            {
+                name: "Ashfaq",
+                age: 20,
+                Profession: "Javascript"
+            },
+            {
+                name: "Nithish",
+                age: 20,
+                Profession: "Html"
+            },
+            {
+                name: "asaraf",
+                age: 20,
+                Profession: "Html"
+            },
+        ]
+
+        namee('All')
+        function namee(value) {
+            console.log(value);
+            let getData;
+            if (value == 'All') {
+                getData = studentdata
+            } else {
+                let filteredData = studentdata.filter(a =>
+                    a.Profession == value
+                )
+                getData = filteredData
+            }
+            console.log(getData);
+            let card = ""
+            
+            getData.forEach(a => {
+                card += `<div style="width: 200px;border: 1px solid grey">
+                    <div>${a.name}</div>
+                    <div>${a.age}</div>
+                    <div>${a.Profession}</div>
+                </div>`
+            });
+            document.getElementById('boxx').innerHTML = card;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+body{
+    font-size: 20px !important;
+}
+@media (min-width:992px) {
+    .positionfixed{
+        position: fixed;
+        text-decoration: none;
+    }
+}
+.textred{
+    color: black;
+
+    
+}
+.red-hover:hover{
+    color: red !important;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<div id="day"></div>
+    <script>
+        var a = 'fmale';
+        if (a == 'male') {
+            console.log('im nale if condition');
+        } else if (a == 'female') {
+            console.log('im female if ');
+        } else {
+            console.log('other if');
+        }
+        var b = 'fmale'
+        var c = new Date().getDay();
+
+        console.log('c data', c);
+        switch (0) {
+            case 0:
+                console.log('sunday');
+                text = 'Sunday'
+                break;
+            case 1:
+                console.log('Monday');
+                break;
+            case 2:
+                console.log('Tuesday');
+                break;
+            case 3:
+                console.log('Wednesday');
+                break;
+            case 4:
+                console.log('Thursday');
+                break;
+            case 5:
+                console.log('Friday');
+                break;
+            case 6:
+                console.log('Saturday');
+                break;
+            default:
+                console.log('something Wrong');
+                
+        }
+        document.getElementById('day').innerHTML = text
+    </script>
+</body>
+
+</html>
+
+
+

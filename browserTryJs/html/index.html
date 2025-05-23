@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <p id="demo"></p>
+    <div class="worlds">
+        <img class="world"
+            src="https://www.pixelstalk.net/wp-content/uploads/2016/11/Earth-From-Space-HD-Backgrounds.jpg" alt="">
+    </div>
+    <!-- Grade list like A++, A, B, C, D, F
+    Average score from array data 
+    console.log(getStudentMark([45, 67, 78, 45, 65, 78], 78))
+    console.log(getStudentMark([45, 67, 78, 45, 65, 78], 35)) -->
+    <!-- Ram's avaerage score is AVERAGEDATA, and you are PASS/FAIL
+    <h1>Ram Average Score: <span id="ramscore"></span></h1>
+    <h1>Nitish Average Score: <span id="nitishscore"></span></h1>
+    <script>
+        let ramScoreData = getStudentData([45, 67, 78, 45, 65, 78], 37)
+        let nitishScoreData = getStudentData([45, 67, 89, 78, 76], 67)
+        document.getElementById('nitishscore').innerHTML = nitishScoreData
+        document.getElementById('ramscore').innerHTML = nitishScoreData
+        console.log(nitishScoreData);
+        function getPassFail(mark){
+            if (mark == 100) {
+                return "A++"
+            } else if(mark >= 90) {
+                return 'A'
+            } else if(mark >= 80){
+                return 'B+'
+            } else if (mark >= 60){
+                return 'C'
+            } else if(mark < 60) {
+                return 'F'
+            }
+        }
+        //console.log(getAverage([45, 67, 89, 78, 76]));
+        function getAverage(params) {
+            // let sumData = params.reduce((a, b)=>a+b)
+            // return sumData/params.length
+            let aveData = 0
+            params.forEach(element => {  
+                aveData += element 
+            });
+            return aveData/params.length
+        }
+        function getStudentData(param1, param2) {
+            let average = getAverage(param1)
+            let passFail = getPassFail(param2)
+            if (passFail != 'F') {
+                return (`The student average score is ${average} and his grade is ${passFail}`)
+            } else {
+                return (`The student average score is ${average} and his grade is ${passFail}`)
+            }
+            
+        }
+    </script> -->
+    <script>
+        // ternery opreter
+        var personAge = 10;
+        if (personAge >= 18) {
+
+            var z = ("you can resister this file");
+
+        } else {
+            var b = ("you can't resister this file");
+        }
+        // var  age = personAge >18 ?'regsiter':"you cannot regsiter" 
+        // console.log(age);
+
+        //while loop
+        var count = 0;
+        while (count < 500) {
+            
+            count++
+            document.getElementById("demo").innerHTML =count++
+
+        }
+        //    add=()=>{
+        // return(10+10)
+        //    }
+        //    console.log(add());
+
+        //    add2 =(count) => (count+2)
+        //    console.log(add2());
+        // function name(a,b) {
+        //     return(a-b)
+        // }
+        // console.log(name(2,3));
+        //     </script>
+</body>
+
+</html>

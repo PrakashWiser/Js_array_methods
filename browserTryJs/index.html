@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        #card .cardChild {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="card" style="display: flex;gap: 20px;">
+        <div class="cardChild">
+            <div class="image" style="width:300px"><img style="width: 100%;"
+                    src="https://www.freecodecamp.org/news/content/images/size/w2000/2023/11/Brown-Aesthetic-Scrapbook-Vintage-Group-Project-Presentation.png"
+                    alt=""></div>
+            <div class="name">Silver High Neck Sweater</div>
+            <div class="price">$210.00</div>
+            <div class="rating"><i class="fa fa-star" aria-hidden="true"></i></div>
+            <div class="button"><button>Add to Cart</button></div>
+        </div>
+    </div>
+    <script>
+        let cartdetails = [
+            {
+                image: "website-img/1.webp",
+                shirtname: "Silver High Neck Sweater",
+                shirtrate: "$210.00",
+                ratingstar: ["fa-regular fa-star", "fa-regular fa-star", "fa-regular fa-star",
+                    "fa-regular fa-star", "fa-regular fa-star"],
+                cartbutton: "Add To Card",
+                iconNames: ["fa-heart", "fa-star", "fa-check", "fa-envelope"],
+            },
+            {
+                image: "website-img/21.webp",
+                shirtname: "Yellow Casual Sweater",
+                shirtrate: "$110.00",
+                ratingstar: ["fa-regular fa-star", "fa-regular fa-star", "fa-regular fa-star",
+                    "fa-regular fa-star", "fa-regular fa-star"],
+                cartbutton: "Add To Card",
+                iconNames: ["fa-heart", "fa-star", "fa-check", "fa-envelope"],
+            },
+            {
+                image: "website-img/4.webp",
+                shirtname: "Denim Blue Jeans",
+                shirtrate: "$140.00",
+                ratingstar: ["fa-regular fa-star", "fa-regular fa-star", "fa-regular fa-star",
+                    "fa-regular fa-star", "fa-regular fa-star"],
+                cartbutton: "Add To Card",
+                iconNames: ["fa-heart", "fa-star", "fa-check", "fa-envelope"],
+            },
+            {
+                image: "website-img/19.webp",
+                shirtname: "Black White Sweater",
+                shirtrate: "$180.00",
+                ratingstar: ["fa-regular fa-star", "fa-regular fa-star", "fa-regular fa-star",
+                    "fa-regular fa-star", "fa-regular fa-star-o"],
+                cartbutton: "Add To Card",
+                iconNames: ["fa-heart", "fa-star", "fa-check", "fa-envelope"],
+            },
+            {
+                image: "website-img/20.webp",
+                shirtname: "Gray Overcoat Women",
+                shirtrate: "$110.00",
+                ratingstar: ["fa-regular fa-star", "fa-regular fa-star", "fa-regular fa-star",
+                    "fa-regular fa-star", "fa-regular fa-star-half-o"],
+                cartbutton: "Add To Card",
+                iconNames: ["fa-heart", "fa-star", "fa-check", "fa-envelope"],
+            },
+        ]
+        cartDetails()
+        async function cartDetails() {
+            // const response = await fetch("api");
+            // console.log(response);
+            // const apiData = await response.json();
+            // console.log(apiData);
+            var card = ''
+            cartdetails.forEach(a => {
+                let iconData = a.ratingstar
+                console.log(iconData);
+                var icons = ''
+                iconData.forEach(b => {
+                    icons += `<i class="fa ${b}" aria-hidden="true"></i>`
+                });
+                card +=`<div class="cardChild">
+                    <div class="image"><img style="width: 100%;" src="https://www.freecodecamp.org/news/content/images/size/w2000/2023/11/Brown-Aesthetic-Scrapbook-Vintage-Group-Project-Presentation.png" alt=""></div>
+                    <div class="name">${a.shirtname}</div>
+                    <div class="price">Price: ${a.shirtrate}</div>
+                    <div class="rating">${icons}</div>
+                    <div class="button"><button>${a.cartbutton}</button></div>
+                </div>`
+            });
+            document.getElementById('card').innerHTML = card;
+        }
+    </script>
+</body>
+
+</html>

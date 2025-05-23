@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <button onclick=Democlick()>AZ</button>
+        <div style="display: flex ;justify-content: center;">
+            <select id="" style="text-transform: capitalize; margin-top: 20px;" onchange=Newfunction(this.value)>
+                <option value="All">All</option>
+                <option value="Reactjs">Reactjs</option>
+                <option value="Javascript">Javascript</option>
+                <option value="Html">Html</option>
+            </select>
+        </div>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; padding-top: 20px; justify-content: center;">
+            <div id="demo" style="display: flex;gap: 20px; flex-wrap: wrap;">
+
+            </div>
+        </div>
+    </section>
+    <script>
+
+        let studentdata = [
+            {
+                name: "Dharma",
+                age: 28,
+                Profession: "Reactjs",
+                subscription: 35000
+
+            },
+            {
+                name: "Prakash",
+                age: 20,
+                Profession: "Reactjs",
+                subscription: 35000
+
+            },
+            {
+                name: "Akash",
+                age: 20,
+                Profession: "Javascript",
+                subscription: 25000
+
+            },
+            {
+                name: "Dinesh",
+                age: 20,
+                Profession: "Javascript",
+                subscription: 25000
+
+
+            },
+            {
+                name: "Kural",
+                age: 20,
+                Profession: "Javascript",
+                subscription: 25000
+
+            },
+            {
+                name: "Ashfaq",
+                age: 20,
+                Profession: "Javascript",
+                subscription: 25000
+
+
+            },
+            {
+                name: "Nithish",
+                age: 20,
+                Profession: "Html",
+                subscription: 20000
+
+            },
+            {
+                name: "asaraf",
+                age: 20,
+                Profession: "Html",
+                subscription: 20000
+
+            },
+        ]
+        function Democlick() {
+            
+            let sortDataA = studentdata.sort((a, b) => a.subscription - b.subscription)
+            console.log(sortDataA);
+            getData = sortDataA
+            let card = ""
+            getData.forEach(a => {
+                card += `<div style="width: 200px;border: 1px solid grey; padding:20px">
+                    <div>${a.name}</div>
+                    <div>${a.age}</div>
+                    <div>${a.Profession}</div>
+                    <div>${a.subscription}</div>
+                </div>`
+            });
+            document.getElementById('demo').innerHTML = card;
+        }
+        Newfunction('All')
+        function Newfunction(value) {
+            console.log(value);
+            let getData;
+            if (value == 'All') {
+                getData = studentdata
+            } else {
+                let filteredData = studentdata.filter(a =>
+                    a.Profession == value
+                )
+                getData = filteredData
+            }
+            console.log(getData);
+
+            let card = ""
+            getData.forEach(a => {
+                card += `<div style="width: 200px;border: 1px solid grey; padding:20px">
+                    <div>${a.name}</div>
+                    <div>${a.age}</div>
+                    <div>${a.Profession}</div>
+                    <div>${a.subscription}</div>
+                </div>`
+            });
+            document.getElementById('demo').innerHTML = card;
+        }
+
+    </script>
+</body>
+
+</html>

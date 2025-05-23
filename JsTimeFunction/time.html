@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <style>
+        .border span {
+            color: rgb(233, 2, 233);
+        }
+
+        .border div {
+            color: white;
+        }
+
+        .colors {
+            color: white !important;
+        }
+
+        .days {
+            color: rgb(140, 237, 140) !important;
+        }
+
+        .bimg {
+            background-image: url(https://wallpapercave.com/wp/wp3305631.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div
+        class=" mx-auto bimg py-5 w-100 d-flex flex-column align-items-center justify-content-center vh-100">
+        <div class="border border-1 tops w-50 mx-auto rounded-pill ">
+            <div class="d-flex gap-5  fw-bold mb-1 mt-4 justify-content-evenly">
+                <div class="ps-5 ">Date: <span id="dDate">2</span></div>
+                <div class="ps-5">Month: <span id="dMonth">5</span></div>
+                <div class="ps-5">Year: <span id="dYear">2023</span></div>
+            </div>
+            <div class="d-flex gap-5 fw-bold my-3 justify-content-around" id="azarDate">
+
+            </div>
+        </div>
+        <div class=" border-1 border w-25 tops mx-auto mt-3 rounded-pill">
+            <div class="d-flex justify-content-around  gap-5 fw-bold ">
+                <div class="d-flex gap-2 py-3 d-none" id="azarTime">
+
+                </div>
+                <div class="d-flex  gap-2 pb-3 pt-3 ">
+                    <div><span class="colors" id="cHour">11</span> : </div>
+                    <div><span class="colors" id="cMinute">58</span> : </div>
+                    <span class="colors" id="cSecond">30</span>
+                    <span class="colors" id="amPm">Am</span>
+                    <span id="dayTimes"></span>
+                </div>
+            </div>
+        </div>
+        <div class=" border-1 border w-25 mx-auto mt-2 tops rounded-pill mt-3">
+            <div class="d-flex justify-content-around  gap-5 fw-bold pb-3 pt-3">
+                <div class="d-flex gap-2">
+                    <div class="days">Day:
+                        <span class="colors" id="cdays"> Monday</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="sociaIcons"
+        style="display: flex;justify-content: space-evenly;width: 200px;background-color: grey;">
+        <div class="icons1"></div>
+        <div class="icons2"></div>
+        <div class="icons3"></div>
+        <div class="icons"></div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./time.js"></script>
+    <script>
+        let a = moment() 
+
+        console.log(a.format('LLLL'));
+    </script>
+</body>
+
+</html>

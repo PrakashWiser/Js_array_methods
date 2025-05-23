@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon:Mobile-Phones Sell</title>
+    <link rel="stylesheet" href="/assets/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-3 col-lg-2 mt-5 ">
+                <div class="positiosfixed text-center text-lg-start">
+                    <input type="text" class="p-1 ps-lg-2  my-2" placeholder="Search products...">
+                    <h3>Brands</h3>
+                    <select onchange=amazon(this.value)>
+                        <option value="Apple">Apple</option>
+                        <option value="Oppo">Oppo</option>
+                        <option value="Realme">Realme</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Vivo">Vivo</option>
+                    </select>
+                    <div>
+                        <button class="text-center text-lg-start"
+                            style="padding: 4px;margin-top: 20px;border-color: rgb(233, 230, 230)"
+                            onclick="amazon2('500')">100 - 500</button>
+                    </div>
+                    <button class="text-center text-lg-start"
+                        style="padding: 4px;margin-top: 20px;border-color: rgb(233, 230, 230)"
+                        onclick="amazon2('500')">500 -1000 </button>
+                    <div class="mt-3">Price Range</div>
+                    <input type="range">
+                    <span>500</span>
+                </div>
+            </div>
+            <div class="col-12 col-md-9 col-lg-10" id="demo">
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="/assets/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/javascript/index.js"></script>
+</body>
+
+</html>

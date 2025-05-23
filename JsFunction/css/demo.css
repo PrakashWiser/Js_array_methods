@@ -1,0 +1,48 @@
+.backGround {
+  width: 80%;
+  height: 600px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg-Orange {
+  color: black;
+  font-weight: 600;
+  border: 1px solid aqua;
+  background-color: aqua;
+
+}
+.bg-Orange:hover{
+  background-color: aqua;
+}
+
+.bg-Red {
+  background-color: blue;
+  font-weight: 600
+}
+.bg-Red:hover{
+  background-color: blue;
+}
+.bg-Green {
+  background-color: green;
+  font-weight: 600;
+  border: 1px solid rgb(3, 22, 3);
+}
+.bg-Green:hover{
+  background-color: green;
+}
+.bg-lightGreeen{
+  background-color: lightgreen;
+  font-weight: 600;
+}
+.bg-lightGreeen:hover{
+  background-color: lightgreen;
+}
+.bg-pink{
+  background-color: pink;
+  font-weight: 600;
+}
+.bg-pink:hover{
+  background-color: pink;
+
+}

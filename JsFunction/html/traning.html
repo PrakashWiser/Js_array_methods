@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../js/training.js"></script>
+    <script>
+        var nodemailer = require('nodemailer')
+        var sender = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+                user: 'enter your gamil id',
+                pass: 'enter your google acccout'
+            }
+        });
+        var composemail ={
+            from :"prakashlunatic@gmail.com",
+            to :"prakashvadakd8@gmail.com",
+            subject : "Hey Every One"
+        }
+    </script>
+</body>
+
+</html>

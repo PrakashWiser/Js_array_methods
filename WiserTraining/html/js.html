@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Doc</title>
+    <link rel="shortcut icon" href="https://www.w3schools.com/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="color: red;">
+    <!-- <button onclick="prakash()">button</button>
+    <button onclick="namee()">click me</button>
+    <button onclick="two()">touch</button>
+    <button onclick="tree()">open</button>
+    <button onclick="four()">continue</button>
+    <button onclick="five()">page</button>
+    <div id="result">my project</div>
+    <div id="one">html</div>
+    <div id="ones">no sql</div>
+    <div id="data1">css</div>
+    <div id="results">bootsrap</div>
+    <div id="view">javascript</div>
+    <div id="pagess">python</div>
+    <div id="view">page</div>
+    <video src="https://www.youtube.com/watch?v=D0-2SbYygsw">youtupe</video> -->
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The at() Method</h2>
+
+    <p>The at() method returns an indexed element from an array.</p>
+
+    <p id="demo"></p>
+    <p id="demos"></p>
+    <p id="this"></p>
+    <p id="pk"></p>
+
+
+    <video id="myVideo" width="520" height="540" controls>
+        <source src="https://www.youtube.com/watch?v=NtvgVtTBJbE" type="video/mp4">
+        <source src="https://www.youtube.com/watch?v=NtvgVtTBJbE" type="video/ogg">
+    </video>
+
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="video"></p>
+
+
+
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        var fruit = fruits.at(3);
+        document.getElementById("demo").innerHTML = fruit;
+    </script>
+
+    <script>
+        const arr1 = ["Cecilie", "Lone"];
+        const arr2 = ["prakash", "akash", "dharma"];
+
+        let children = arr1.concat(arr2);
+        document.getElementById("demos").innerHTML = children;
+    </script>
+    <script>
+        const fruitss = ["Banana", "Orange", "Apple", "Mango", "star"];
+        let a = fruitss.at(4);
+        document.getElementById("this").innerHTML = a;
+    </script>
+
+    <script>
+        const fruit = ["Banana", "Orange", "Apple", "Mango"];
+        const f = fruit.entries();
+
+        for (let x of f) {
+            document.getElementById("pk").innerHTML += x + "<br>";
+        }
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myVideo").duration;
+            document.getElementById("video").innerHTML = x;
+        }
+    </script>
+
+    <!-- <script>
+        const ratings = [
+            { emoji: "", name: "give us ratings" },
+            { emoji: "", name: "very poor" },
+            { emoji: "", name: "poor" },
+            { emoji: "", name: "very good" },
+            { emoji: "", name: "excellent" }
+        ];
+        console.log(ratings[4]);
+        var rat = ratings[0];
+        document.getElementById('pagess').innerHTML = rat.name
+        var a = ['cds', 'jnkjsc', 'cdcd', 'cdcd', 'dcd', 'cdcd', 'cd']
+
+        console.log(a[1]);
+
+        var TodayDate = new Date()
+        var a = TodayDate.getDate()
+        var b = TodayDate.getTime()
+        console.log('WholeDate: ', TodayDate);
+        console.log('TodayDate: ', a);
+        console.log('TodayTime: ', b);
+        // var h;
+        // console.log(h);
+        var a
+        function prakash() {
+            document.getElementById('result').style.textTransform = 'uppercase'
+            document.getElementById('result').style.color = 'dark'
+            document.getElementById('result').style.textDecoration = 'line-through'
+            document.getElementById('result').style.fontSize = '30px'
+            document.getElementById('result').style.fontWeight = 'bold'
+        }
+        function namee() {
+            document.getElementById('one').innerHTML = 'your name'
+            document.getElementById('one').style.color = 'red'
+            document.getElementById('one').style.fontSize = '60px'
+        }
+        function two() {
+            document.getElementById('data1').style.color = 'gray'
+            document.getElementById('data1').style.fontSize = '80px'
+            document.getElementById('data1').style.textTransform = 'uppercase '
+        }
+        function tree() {
+            document.getElementById('results').style.color = 'brown'
+            document.getElementById('results').style.fontWeight = '600'
+            document.getElementById('results').style.fontSize = '120px'
+        }
+        function four() {
+            document.getElementById('view').style.backgroundColor = 'black'
+            document.getElementById('view').style.color = 'white'
+            document.getElementById('view').style.fontSize = '120px'
+
+        }
+        function five() {
+            document.getElementById('page').style.fontSize = '180px'
+            document.getElementById('page').style.color = 'red'
+
+
+        }
+        const userDB = 'dharma'
+        const passDB = '123'
+        function userNameCheck(username, password) {
+            if (username == userDB) {
+                if (password == passDB) {
+                    console.log('redirect to home');
+                } else {
+                    console.log('password is wrong');
+                }
+            } else {
+                console.log('we dont have such user');
+            }
+
+        }
+
+        userNameCheck('dharma', '123')
+        function plus(a, b) {
+            return (a + b)
+        }
+        function minus(a, b) {
+            return (a - b)
+        }
+        function divison(a, b) {
+            return (a * b)
+        }
+        function bract(a, b) {
+            return (a / b)
+        }
+        function close(a, b) {
+            return (a == b)
+        }
+        var a = plus(4, 4)
+        console.log(a);
+        document.getElementById("ones").innerHTML = a
+
+        var b = minus(69, 69)
+        console.log(b);
+        document.getElementById("results").innerHTML = b
+        var c = divison(7, 7);
+        console.log(c);
+        document.getElementById("page").innerHTML = c
+
+    </script>
+    <script></script> -->
+
+</body>
+
+</html>

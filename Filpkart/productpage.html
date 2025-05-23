@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="products">
+
+
+        </div>
+    </div>
+    <script>
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        console.log(id);
+        async function getApiData(params) {
+            let apiData = "https://dummyjson.com/products/category/smartphones"
+            const response = await fetch(apiData)
+            const json = await response.json()
+            let objData = json.products
+            return objData
+        }
+        async function originalFunction(params) {
+            let apiData = await getApiData()
+            console.log(apiData);
+            let filteredData = filterData(apiData, id)
+            console.log(filteredData);
+            filteredData = filteredData[0]
+            console.log(filteredData);
+            let list = listData(filteredData)
+        }
+        function listData(params) {
+            console.log(params);
+            let a = params
+            let card = `<div class="row">
+                <div class="col-12  col-lg-6 my-4 ">
+                 <div class="d-flex gap-5">
+                    <div class="d-flex flex-column ">
+                     <span class="py-5">
+                     <img id="smallImg" onmouseover="bigImg()" onmouseout="normalImg()" src="${a.images[2]}"/ width="100">
+                    </span> 
+                     <span>
+                     <img  id="bigimage" onmouseover="bigImgs()" onmouseout="normalImgs()" src="${a.images[0]}"/ width="100">
+                    </span>
+                    </div>
+                <img id="mainImg" style="width:280px;" src="${a.images[1]}"/>
+                    </div>
+            </div>
+             <div class="col-12  col-lg-6" ">
+                         <div>
+                          <div class="fs-3 mt-4">${a.brand}</div>
+                             <div>Visited the Apple store</div>
+                            <div>${a.description}</div>
+                            <div class="fs-3 fw-bold py-2">${a.price}</div>
+                            <div style="border-top:1px solid gray;">
+                                <div class="fs-4">${a.title}</div>
+                               <div>${a.warrantyInformation}</div>
+                            <div>${a.stock}</div>
+                            <div style="border-bottom: 1px solid gray ;"">${a.rating}</div>
+                            <div class="pt-3">${a.reviews[0].comment}</div>
+                            <div>${a.returnPolicy}</div>
+                            <div>${a.shippingInformation}</div>
+                            <div class="py-2">${a.discountPercentage}</div>
+                            <div>${a.meta.updatedAt}</div>
+                        <ul class="my-5">
+                            <li>
+                             DYNAMIC ISLAND COMES TO IPHONE 15 — Dynamic Island bubbles up alerts and Live
+                                Activities — so you don’t miss them while you’re doing something else. 
+                                You can see who’s calling, track your next ride,
+                                 check your flight status, and so much more.
+                                    </li>
+                                      <li class="py-5">
+                             48MP MAIN CAMERA WITH 2X TELEPHOTO — The 48MP 
+                             Main camera shoots in super-high resolution. 
+                             So it’s easier than ever to take standout photos with amazing detail. 
+                             The 2x optical-quality
+                              Telephoto lets you frame the perfect close-up.
+                                    </li>
+                            </ul>
+                                </div>
+                        </div>
+                </div>
+            </div>
+           
+                </div>
+              `
+            document.getElementById("products").innerHTML = card
+        }
+        function filterData(params1, params2) {
+            return params1.filter(a =>
+                a.id == params2
+            )
+        }
+        originalFunction()
+        function bigImg() {
+            document.getElementById("mainImg").src = smallImg.src
+        }
+        function normalImg() {
+            document.getElementById("mainImg").src = mainImg.src
+        }
+        function bigImgs() {
+            document.getElementById("mainImg").src = bigimage.src
+        }
+        function normalImgs() {
+            document.getElementById("mainImg").src = bigimage.src
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
